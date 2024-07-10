@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>User Dashboard</title>
+</head>
+
+<body>
+	<section class="container-fluid">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12 border p-0">
+					<div class="dashboard_profile_img m-0">
+						<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img src="/images/banner-1.jpg" class="d-block w-100 banner_image_tag" alt="..."
+										height="250px">
+								</div>
+								<div class="carousel-item">
+									<img src="/images/banner-2.jpg" class="d-block w-100 banner_image_tag" alt="..."
+										height="250px">
+								</div>
+								<div class="carousel-item">
+									<img src="/images/banner-3.jpg" class="d-block w-100 banner_image_tag" alt="..."
+										height="250px">
+								</div>
+							</div>
+							<button class="carousel-control-prev" type="button"
+								data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Previous</span>
+							</button>
+							<button class="carousel-control-next" type="button"
+								data-bs-target="#carouselExampleControls" data-bs-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Next</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<h3 class="text-center text-uppercase mt-3">Welcome to User Dashboard!</h3>
+			</div>
+				<hr />
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="col-md-6 mb-3">
+					<p class="text-center">"Manage your important contacts effortlessly. Access them <span
+							class="fw-bold text-uppercase">anytime, anywhere</span>, on any device with our <span
+							class="fw-bold text-uppercase">secure and user-friendly</span> platform."</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6 col-md-3">
+					<div class="card-feature border">
+						<div class="d-flex align-items-center justify-content-center p-1">
+							<img src="/images/add-friend.png" alt="" height="70px" />
+						</div>
+						<h6 class="text-center text-light">Add New Contact</h6>
+						<p class="text-warning text-center">Quickly add new contacts in contact list</p>
+					</div>
+				</div>
+				<div class="col-6 col-md-3">
+					<div class="card-feature border">
+						<div class="d-flex align-items-center justify-content-center p-1">
+							<img src="/images/address-book.png" alt="" height="70px" />
+						</div>
+						<h6 class="text-center text-light">View All Contacts</h6>
+						<p class="text-warning text-center">See all your contacts in one place</p>
+					</div>
+				</div>
+				<div class="col-6 col-md-3">
+					<div class="card-feature border">
+						<div class="d-flex align-items-center justify-content-center p-1">
+							<img src="/images/search.png" alt="" height="70px" />
+						</div>
+						<h6 class="text-center text-light">Search Contacts</h6>
+						<p class="text-center text-warning">Find contacts quickly with our powerful search tool</p>
+					</div>
+				</div>
+				<div class="col-6 col-md-3">
+					<div class="card-feature border">
+						<div class="d-flex align-items-center justify-content-center p-1">
+							<img src="/images/networking.png" alt="" height="70px" />
+						</div>
+						<h6 class="text-center text-light">View Anywhere</h6>
+						<p class="text-center text-warning">Easily view contacts from any device</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+</body>
+
+</html>

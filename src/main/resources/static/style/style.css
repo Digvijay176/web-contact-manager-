@@ -1,0 +1,62 @@
+@charset "ISO-8859-1";
+*{
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+.landing-page{
+	background-color: black;
+	background-image: url("/images/phonecallbg.jpg");
+	  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url("/images/phonecallbg.jpg"); 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.landing-page-container{
+	height: 93vh;
+}
+.landing-page-container .row{
+	height: 100%;
+}
+.register-form input{
+	border: none;
+	border-bottom: 1px solid skyblue;
+	border-radius: 0;
+}
+.register-form textarea{
+	border: none;
+	border-bottom: 1px solid skyblue;
+	border-radius: 0;
+}
+register-form select{
+	border: none;
+	border-bottom: 1px solid skyblue;
+	border-radius: 0;
+}
+
+.register-form i{
+	color: skyblue;
+	font-size:25px;
+	padding: 10px;
+	margin-right: 10px;
+	}
+	
+#defaultCheck1{
+	border: 1px solid deepskyblue;
+	margin-right: 5px;
+}
+
+.signup-form-div{
+	box-shadow: 2px 2px 5px lightblue;
+}
+.img-box{
+	border: 4px solid skyblue;
+	border-radius: 50%;
+	height: 200px;
+	width: 200px;
+	background-color: darkgoldenrod;
+	overflow: hidden;
+	margin: auto;
+}

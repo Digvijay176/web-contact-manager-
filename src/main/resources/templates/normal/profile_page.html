@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>home</title>
+</head>
+
+<body>
+	<section class="container-fluid">
+		<div class="container">
+
+			<!--profile image-->
+			<div class="profile_box" style="height:300px; position: relative;">
+				<div class="profile_subbox"
+					style="height: 150px; background:url('/images/profile.jpg'); overflow: hidden;">
+					<img th:src="@{/images/profile.jpg}" alt="img" width="100%" />
+				</div>
+				<div class="profile_box_circle"
+					style="height:200px; position:absolute; top: 20%; right: 25%; width: 200px; border-radius: 100px; background-color: antiquewhite; border:4px solid white">
+				</div>
+			</div>
+			<!--profile image-->
+
+			<div class="row">
+				<div class="col-8 offset-2 ">
+					<div class="p-3" style="background-color: darkslategrey;">
+						<h1 class="text-light">YOUR PROFILE</h1>
+					</div>
+					<table class="" style="width: 100%;">
+
+						<tr class="p-3 border">
+							<td class="p-3 fw-bold">Name</td>
+							<td class="p-3 fw-bold">Digvijay jadhav</td>
+						</tr>
+
+						<tr class="p-3 border">
+							<td class="p-3 fw-bold">Email</td>
+							<td class="p-3 fw-bold">digvijay@gmail.com</td>
+						</tr>
+						<tr class="p-3 border">
+							<td class="p-3 fw-bold">Account Status</td>
+							<td class="text-success p-3 fw-bold">activated</td>
+						</tr>
+						<tr class="p-3 border">
+							<td class="p-3 fw-bold">About</td>
+							<td class="p-3 fw-bold">this is about user and much more...........</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+		</div>
+		</div>
+	</section>
+</body>
+
+</html>

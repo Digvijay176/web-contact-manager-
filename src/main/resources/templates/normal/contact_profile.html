@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>home</title>
+</head>
+
+<body>
+	<section class="container p-2">
+		<div class="single_user_card border p-2">
+			<div class="row p-1">
+				<div class="col-12">
+					<h1 class="text-center text-danger">CONTACT DETAILS</h1>
+					<p class="text-primary text-center">contact information about single user</p>
+				</div>
+			</div>
+			
+			<div class="row p-1 p-md-3" th:if="${contactDetails}" th:object="${contactDetails}">
+				<div class="col-12 col-md-4  d-flex align-item-center justify-content-center">
+					<div class="single_user_profile">
+						<img src="" th:src="@{'/user-image/'+${contactDetails.imageUrl}}" alt="contact profile" />
+					</div>
+				</div>
+				<div class="col-12 col-md-8">
+					<div class="row">
+						<div class="col d-flex align-item-center justify-content-end">							
+						<a href="" class="text-decoration-none"><i class="fa-solid fa-circle-arrow-left"></i>&nbsp;back</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<h2 class="text-uppercase" th:text="${contactDetails.name}"></h2>
+						</div>
+						<hr />
+						<div>
+							<p class="p-0 m-0">About Contact User:</p>
+							<p th:text="${contactDetails.description}"></p>
+						</div>
+						<hr />
+						<div class="mb-2">
+							<table>
+								<tr>
+									<td><i class="fa-solid fa-phone-volume p-1"></i></td>
+									<td class="fw-bold"> phone:</td>
+									<td class="p-1">&nbsp;<span th:text="${contactDetails.contactNo}"></span></td>
+								</tr>
+								<tr>
+									<td><i class="fa-solid fa-envelope p-1"></i></td>
+									<td class="fw-bold">email :</td>
+									<td class="p-1" th:text="${contactDetails.email}"></td>
+								</tr>
+								<tr>
+									<td><i class="fa-solid fa-briefcase p-1"></i></td>
+									<td class="fw-bold">work :</td>
+									<td class="p-1" th:text="${contactDetails.work}">office</td>
+								</tr>
+							</table>
+						</div>
+						<hr />
+						<div class="d-flex justify-content-end">
+							<ul class="d-flex contact-icon-style">
+								<li class="text-center"><a href="#"><i class="fa-brands fa-whatsapp text-success fa-2x"></i></a>MESSAGE NOW</li>
+								<li><a href="#"><i class="fa-solid fa-phone-volume text-primary fa-2x"></i></a></li>
+								<li><a href="#"><i class="fa-regular fa-envelope fa-2x text-warning"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<ul class="d-flex list-unstyled gap-2">
+								<li class="text-success p-1 border border-success"><a th:href="@{'/user/contact/update/'+${contactDetails.cid}}" class="text-success btn"><i class="fa-solid fa-pen-to-square"></i>UPDATE</a></li>
+								<li class="text-danger p-1 border border-danger"> <a th:onclick="|deleteContact(${contactDetails.cid})|" class="btn text-danger"><i class="fa-solid fa-trash"></i>DELETE</a></li>
+							</ul>
+						</div>						
+					</div>
+				</div>
+			</div>
+			<div class="row" th:unless="${contactDetails}">
+				<h1> USER NOT FOUND WITH THIS ID !</h1>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>home</title>
+	<link rel="stylesheet" th:href="@{/style/style.css}" />
+</head>
+
+<body>
+	<section class="container-fluid landing-page p-0">
+
+		<div class="container landing-page-container d-flex align-item-center justify-content-center p-0">
+			<div class="col-12 col-md-6 d-flex flex-column align-item-center justify-content-center">
+				<div class="container d-flex align-item-center">
+					<img class="m-auto" src="/images/address-book.png" alt="" height="150px" widht="70px" />
+				</div>
+				<h2 class=" text-white pt-2 pb-2 text-center">WEB CONTACT MANAGER</h2>
+				<p class="text-white text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi quo
+					dolore quos temporibus quod asperiores repellat sit tenetur assumenda.</p>
+				<div class="container">
+					<div class="row d-flex align-item-center justify-content-center">
+						<div class="col-3">
+							<a href="/contactmanager/public/login" class="btn  container bg-light">LOGIN</a>
+						</div>
+						<div class="col-3">
+							<a href="/contactmanager/public/signup" class="btn container bg-warning">SIGN UP</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--provides -->
+		<div class=" m-0 container-fluid bg-light">
+			<div class="container pt-3 pb-2 pb-md-4">
+				
+				<div class="row mb-2 p-2 ">
+					<div class="col-12 pt-2 pb-2">
+						<h2 class="text-center">SERVIES & FEATURES</h2>
+					</div>
+					<div class="col-6 col-md-3">
+						<div class="card-feature home-page-card-feature">
+							<div class="d-flex align-items-center justify-content-center p-1">
+								<img src="/images/add-friend.png" alt="" height="70px" />
+							</div>
+							<h6 class="text-center fw-bold">Add New Contact</h6>
+							<p class="text-dark text-center">Quickly add new contacts in contact list</p>
+						</div>
+					</div>
+					<div class="col-6 col-md-3">
+						<div class="card-feature home-page-card-feature">
+							<div class="d-flex align-items-center justify-content-center p-1">
+								<img src="/images/address-book.png" alt="" height="70px" />
+							</div>
+							<h6 class="text-center fw-bold">View All Contacts</h6>
+							<p class="text-dark text-center">See all your contacts in one place</p>
+						</div>
+					</div>
+					<div class="col-6 col-md-3">
+						<div class="card-feature home-page-card-feature">
+							<div class="d-flex align-items-center justify-content-center p-1">
+								<img src="/images/search.png" alt="" height="70px" />
+							</div>
+							<h6 class="text-center fw-bold">Search Contacts</h6>
+							<p class="text-center text-dark">Find contacts quickly with our powerful search tool</p>
+						</div>
+					</div>
+					<div class="col-6 col-md-3">
+						<div class="card-feature home-page-card-feature">
+							<div class="d-flex align-items-center justify-content-center p-1">
+								<img src="/images/networking.png" alt="" height="70px" />
+							</div>
+							<h6 class="text-center fw-bold">View Anywhere</h6>
+							<p class="text-center text-dark">Easily view contacts from any device</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<!--provides end-->
+		<!--this is aim section-->
+		<div class="container-fluid bg-dark">
+			<div class="container">
+				<div class="row p-2">
+					<div class="col-12 col-md-6">
+						<h2 class="m-0 pt-3 pb-3 text-light">ABOUT WEB CONTACT MANAGER</h2>
+						<p class="text-justify text-light">Welcome to Web Contact Manager, your trusted solution for seamless and secure contact
+						management. Our robust and efficient web-based application is designed to simplify the way you
+						handle your contacts, ensuring that your important information is always at your fingertips.</p>
+
+						<h2 class="m-0 pt-3 pb-3 text-light">OUR MISSION</h2>
+						<p class="text-justify text-light">At Web Contact Manager, our mission is to provide a user-friendly and reliable platform that
+						empowers individuals to manage their contacts effortlessly. We aim to enhance productivity and
+						organization by offering a solution that is both powerful and easy to use.</p>
+					</div>
+					
+					<div class="col-12 col-md-6 border">
+						<div class="">							
+						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--this is aim section-->
+		
+		<div class="container-fluid bg-light">
+			<div class="container">
+				<div class="row">
+					this is row
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

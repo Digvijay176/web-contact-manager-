@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>home</title>
+</head>
+
+<body>
+	<section class="container-fluid  m-0">
+		<div class="container">
+			<div class="row p-3">
+				<div class="col-12 col-md-6 d-flex flex-column justify-content-center  align-item-center alert-dark">
+					<div class="d-flex align-item-center justify-content-center mb-2 mt-2 img-box">
+						<img src="/images/registation2.jpg" alt="" height="200px" width="auto" />
+					</div>
+					<h1 class="text-center text-dark">REGISTER HERE</h1>
+				</div>
+				<div class="col-12 col-md-6 border signup-form-div bg-white p-2">
+
+
+					<form th:action="@{register}" method="post" class="register-form" th:object="${user}">
+						<div class="mb-3">
+							<label for="exampleFormControlInput1" class="form-label">user name</label>
+							<div class="d-flex">
+
+								<i class="fa-solid fa-user fa-2x p-1"></i>
+								<div class="d-flex flex-column container">
+
+									<input name="userName" type="text" class="form-control"
+										th:classappend="${#fields.hasErrors('userName')} ? 'is-invalid' : ''"
+										id="exampleFormControlInput1" placeholder="enter your name"
+										th:value="${user.userName}">
+
+									<div id="validationServer03Feedback" class="invalid-feedback">
+										<ul th:each="e : ${#fields.errors('userName')}">
+											<li th:text="${e}"></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<label for="exampleFormControlInput1" class="form-label">Email address</label>
+							<div class="d-flex">
+								<i class="fa-solid fa-2x p-1 fa-at"></i>
+								<div class="d-flex flex-column container">
+									<input name="email" type="email" class="form-control"
+										th:classappend="${#fields.hasErrors('email')} ? 'is-invalid' : ''"
+										id="exampleFormControlInput1" placeholder="name@example.com"
+										th:value="${user.email}">
+									<div id="validationServerFeedback" class="invalid-feedback">
+										<ul th:each="e : ${#fields.errors('email')}">
+											<li th:text="${e}"></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<label for="exampleFormControlInput1" class="form-label">enter password</label>
+							<div class="d-flex">
+								<i class="fa-solid fa-2x p-1 fa-lock"></i>
+								<div class="d-flex flex-column container">
+									<input name="password" type="password" class="form-control"
+										id="exampleFormControlInput1" placeholder="enter pssword"
+										th:classappend="${#fields.hasErrors('password')} ? 'is-invalid' : ''">
+									<div id="validationServerFeedback" class="invalid-feedback">
+										<ul th:each="e : ${#fields.errors('password')}">
+											<li th:text="${e}"></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="mb-3">
+							<label for="exampleFormControlTextarea1" class="form-label">about you</label>
+							<div class="d-flex">
+								<i class="fa-solid fa-2x p-1 fa-circle-info"></i>
+								<textarea name="description" class="form-control" id="exampleFormControlTextarea1"
+									placeholder="write somthing about your..........." rows="3"
+									th:value="${user.description}"></textarea>
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<div class="d-flex">
+								<input name="turms" class="form-check-input" type="checkbox" id="defaultCheck1">
+								<label class="form-check-label" for="defaultCheck1">
+									terms & conditions
+								</label>
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<div class="container">
+								<div class="row pt-3 pb-3">
+									<div class="col-6">
+										<a class="btn container border" href="/login">login</a>
+									</div>
+									<div class="col-6">
+										<button class="btn container bg-warning">sign up</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

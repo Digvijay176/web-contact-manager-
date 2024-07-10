@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>user dashbord</title>
+	</style>
+</head>
+
+<body>
+	<section class="container-fluid">
+
+		<div class="container">
+			<div class="row">
+				<h2 class="text-center">ADD CONTACT</h2>
+				<p></p>
+			</div>
+			<div class="row pt-3 p-3">
+
+				<div class="col-12 col-md-12 d-flex align-item-center justify-content-center p-md-3">
+					<form action="#" method="post" th:action="@{/user/contact-handler}" th:object="${contact}"
+						class="form-tag border p-3" enctype="multipart/form-data">
+						<table gap="2">
+							<tr class="mb-1">
+								<td class="p-2">
+									<label for="name" class="form-label">
+										Enter Name
+									</label>
+								</td>
+								<td class="p-2">
+									<input type="text" class="form-control" id="name"
+										th:classappend="${#fields.hasErrors('name')} ? 'is-invalid' : ''" name="name"
+										placeholder="enter name" th:value="${contact.name}">
+									<div id="validationServer03Feedback" class="invalid-feedback">
+										<ul th:each="e : ${#fields.errors('name')}">
+											<li th:text="${e}"></li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							<tr class="mb-1">
+								<td class="p-2" >
+									<label for="nickname" class="form-label">
+										Enter Nickname
+									</label>
+								</td>
+								<td class="p-2">
+									<input type="text" class="form-control" id="nickname" name="nickName"
+										placeholder="enter nick name" th:value="${contact.nickName}"
+										th:classappend="${#fields.hasErrors('nickName')} ? 'is-invalid' : ''">
+
+									<div id="validationServer03Feedback" class="invalid-feedback">
+										<ul th:each="e : ${#fields.errors('nickName')}">
+											<li th:text="${e}"></li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+
+							<tr class="mb-1">
+								<td class="p-2">
+									<label for="email" class="form-label">
+										Enter Email
+									</label>
+								</td>
+								<td class="p-2">
+									<input type="text" class="form-control" id="email" name="email"
+										placeholder="enter email" th:value="${contact.email}"
+										th:classappend="${#fields.hasErrors('email')} ? 'is-invalid' : ''">
+
+									<div id="validationServer03Feedback" class="invalid-feedback">
+										<ul th:each="e : ${#fields.errors('email')}">
+											<li th:text="${e}"></li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+
+							<tr class="mb-1">
+								<td class="p-2">
+									<label for="work" class="form-label">
+										Enter Work
+									</label>
+								</td>
+								<td class="p-2">
+									<input type="text" class="form-control" id="work" name="work"
+										placeholder="enter work" th:value="${work}"
+										th:classappend="${#fields.hasErrors('work')} ? 'is-invalid' : ''">
+
+									<div id="validationServer03Feedback" class="invalid-feedback">
+										<ul th:each="e : ${#fields.errors('work')}">
+											<li th:text="${e}"></li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+
+							<tr class="mb-1">
+								<td class="p-2">
+									<label for="contactNo" class="form-label">
+										Enter Contact Number
+									</label>
+								</td>
+								<td class="p-2">
+									<input type="tel" class="form-control" id="contactno" name="contactNo"
+										placeholder="enter contact number" th:value="${contact.contactNo}"
+										th:classappend="${#fields.hasErrors('contactNo')} ? 'is-invalid' : ''">
+
+									<div id="validationServer03Feedback" class="invalid-feedback">
+										<ul th:each="e : ${#fields.errors('contactNo')}">
+											<li th:text="${e}"></li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+
+							<tr class="mb-1">
+								<td class="p-2">
+									<label for="exampleFormControlTextarea1" class="form-label">
+										Example textarea
+									</label>
+								</td>
+								<td class="p-2">
+									<textarea class="form-control" id="mytextarea" name="description" rows="3"
+										th:value="${description}"
+										th:classappend="${#fields.hasErrors('description')} ? 'is-invalid' : ''">
+									</textarea>
+									<div id="validationServer03Feedback" class="invalid-feedback">
+										<ul th:each="e : ${#fields.errors('description')}">
+											<li th:text="${e}"></li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							<tr class="mb-1">
+								<td class="p-2">
+									<div class="input-group">
+										contact profile photo
+									</div>
+								</td>
+								<td class="p-2"><input name="imageFile" type="file"></td>
+							</tr>
+							
+							<tr>
+								<td colspan="2"><button type="submit" class="container btn btn-success">ADD CONTACT</button></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!--	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+		<script>
+			tinymce.init({
+				selector: '#mytextarea'
+			});
+		</script>
+		Place the first <script> tag in your HTML's <head> 
+		<script src="https://cdn.tiny.cloud/1/ftap1m0ht0mduajpsj48d5to9s3j7zrwjestnc2fsnqc5q0y/tinymce/7/tinymce.min.js"
+			referrerpolicy="origin"></script>
+
+		Place the following <script> and <textarea> tags your HTML's <body> 
+		<script>
+			tinymce.init({
+				selector: 'textarea',
+				plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss markdown',
+				toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+				tinycomments_mode: 'embedded',
+				tinycomments_author: 'Author name',
+				mergetags_list: [
+					{value: 'First.Name', title: 'First Name'},
+					{value: 'Email', title: 'Email'},
+				],
+				ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+			});
+		</script>-->
+
+	</section>
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="Layout(content)">
+
+<head>
+	<meta charset="UTF-8">
+	<title th:text="${title}">smart contact manager</title>
+
+	<link rel="stylesheet" th:href="@{/style/style.css}" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<style>
+		@charset "ISO-8859-1";
+
+		* {
+			box-sizing: border-box;
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.landing-page {
+			background-color: black;
+			background-image: url("/images/phonecallbg.jpg");
+			background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+				url("/images/phonecallbg.jpg");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		.landing-page-container {
+			height: 93vh;
+		}
+
+		.landing-page-container .row {
+			height: 100%;
+		}
+
+		.register-form input {
+			border: none;
+			border-bottom: 1px solid skyblue;
+			border-radius: 0;
+		}
+
+		.register-form textarea {
+			border: none;
+			border-bottom: 1px solid skyblue;
+			border-radius: 0;
+		}
+
+		register-form select {
+			border: none;
+			border-bottom: 1px solid skyblue;
+			border-radius: 0;
+		}
+
+		.register-form i {
+			color: skyblue;
+			font-size: 25px;
+			padding: 10px;
+			margin-right: 10px;
+		}
+
+		#defaultCheck1 {
+			border: 1px solid deepskyblue;
+			margin-right: 5px;
+		}
+
+		.img-box {
+			border: 4px solid skyblue;
+			border-radius: 50%;
+			height: 200px;
+			width: 200px;
+			background-color: darkgoldenrod;
+			overflow: hidden;
+			margin: auto;
+		}
+		.footer-img-div{
+			border: 1px solid red;
+			background-color: green;
+			border-radius: 50px;
+			height: 100px;
+			width: 100px;
+			margin: auto;
+		}
+		.home-page-card-feature{
+			min-height: 200px;
+			background-color: gray;
+			border:1px solid gray;
+			border-radius: 5px;
+			box-shadow: 2px 2px 5px white;
+		}
+	</style>
+</head>
+
+<body class="">
+	<!--navbar started-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/">CONTACT MANAGER</a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
+				<ul class="navbar-nav text-uppercase flex-end">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="/">home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/contactmanager/public/about">about</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/contactmanager/public/login">login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/contactmanager/public/signup">sign up</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--navbar ended -->
+
+
+	<div th:if="${session.message}" th:classappend="${session.message.type}"
+		class="alert border alert-dismissible fade show" role="alert">
+		<big class="text-center" th:text="${session.message.name}"></big>
+		<a type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" th:href="@{/remove-session-attribute}"></a>
+		<th:block th:text="${@sessionHelper.removeMessageFromSession()}"></th:block>
+	</div>
+
+
+	<div th:replace="${content}"></div>
+	
+	<div class="footer container-fluid bg-dark">
+		<div class="container">
+			<div class="row">
+				
+				<!--first column of footer is compleated -->
+				<div class="col-12 col-md-4 mt-2">
+					<div class="row">
+						<div class="col-12 p-1">
+							<div class="footer-img-div">
+								<!---working space......................-->
+							</div>
+						</div>
+						<div class="col-12 p-2">
+							<h6 class="text-light text-center">WEB CONTACT MANAGER</h6>
+							<p class="text-center text-light p-0 m-0">
+								<small>"Your Contact Numbers,<br/> Secure and Assured with Us."</small>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!--first column of footer is compleated-->
+				
+				<!--second column of footer is started-->
+				<div class="col-12 col-md-2 mt-2">
+					<h6 class="text-light">NAV LINKS</h6>
+					<ul class="d-flex flex-column list-unstyled">
+						<li class="text-light">
+							<a class="p-0 nav-link active" aria-current="page" href="/"><small><i class="fa-solid fa-house p-1"></i>Home</small></a>
+						</li>
+						<li class="text-light">
+							<a class="nav-link p-0 active" aria-current="page" href="/contactmanager/public/about"><small><i class="fa-solid fa-users p-1"></i>about us</small></a>
+						</li>
+						<li class="text-light">
+							<a class=" p-0 nav-link" href="/contactmanager/public/login"><small><i class="fa-solid fa-right-to-bracket p-1"></i>login</small></a>
+						</li>
+						<li class="text-light">
+							<a class=" p-0 nav-link" href="/contactmanager/public/signup"><small><i class="fa-solid fa-user-plus p-1"></i>sign up</small></a>
+						</li>
+						
+					</ul>
+				</div>
+				<!--seconnd column of footer is compleated-->
+				
+				<div class="col-12 col-md-6 mt-2">
+					
+					<div class="row">
+						<div class="col-12">
+							<h6 class="text-light">ADDRESS</h6>
+							<p class="text-light">
+								<small>									
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium modi.
+								</small>
+							</p>
+						</div>
+					</div>
+					<div class="col-12">
+						<h6 class="text-light">CONTACT US</h6>
+						<small><a href="#"><i class="fa-solid fa-phone p-1"></i>9900000000</a></small>
+						<small><a href="#"><i class="fa-regular fa-envelope p-1"></i>webcontactmanager@gmail.com</a></small>
+						<div>
+							<ul class="d-flex flex-row gap-2 list-unstyled">
+								<li><a href="#"><small><i class="fa-brands fa-instagram"></i></small></a></li>
+								<li><a href="#"><small><i class="fa-brands fa-facebook"></i></small></a></li>
+								<li><a href="#"><small><i class="fa-brands fa-edge"></i></small></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row bg-warning">
+			@copyright
+		</div>
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+		integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+		integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+		crossorigin="anonymous"></script>
+	<script src="/javascript/bootstrap.bundle.js"></script>
+</body>
+
+</html>
